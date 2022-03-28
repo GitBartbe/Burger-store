@@ -1,0 +1,48 @@
+@use "../../scss/_variables.scss" as *;
+
+.burger-component {
+  display: flex;
+  overflow: hidden;
+  margin: 50px 20px 0;
+  width: 600px;
+  height: 450px;
+  border-radius: 30px;
+//   background: url("../../assets/burger-bgs/burger-1.png");
+  background-size: cover;
+
+  .burger-content {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      background-color: rgba(3, 3, 3, 0.281);
+      padding: 40px;
+  }
+
+  p, h1, li {
+      color: $secondary-color ;
+  }
+  h1 {
+      margin-bottom: 40px;
+  }
+ 
+  .bottom {
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+      align-items: center;
+      p {
+          margin-bottom: 20px;
+      }
+  }
+}
+
+@media (max-width: 600px) {
+    .burger-component {
+        width:100%;
+        height: 350px;
+        
+    .burger-content {
+        width:100%;
+    }
+    }
+}

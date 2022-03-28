@@ -1,0 +1,14 @@
+@use "../../scss/_variables.scss" as *;
+
+.details-component {
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    a {
+        display: flex;
+        align-self: flex-end;
+        margin: 20px;
+        font-size: 36px;
+        color: $secondary-color;
+    }
+}

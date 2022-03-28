@@ -1,0 +1,44 @@
+@use "../../scss/_variables.scss" as *;
+
+.details-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100vh;
+
+    .details-left {
+        display: flex;
+        background: url("../../assets/about-photo.png") bottom no-repeat ;
+        background-size:cover;
+        
+    }
+    .details-middle {
+        display: flex;
+        background: url("../../assets/history-photo.png") bottom no-repeat ;
+        background-size:cover;
+    }
+    .details-right {
+        display: flex;
+        background: url("../../assets/media-photo.png") bottom no-repeat;
+        background-size:cover;
+    }
+    a {
+        display: flex;
+        align-self: flex-end;
+        margin: 20px;
+        font-size: 36px;
+        color: $secondary-color;
+    }
+}
+
+@media (max-width: 700px) {
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+
+
+

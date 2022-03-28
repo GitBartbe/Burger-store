@@ -1,0 +1,90 @@
+@use "../../scss/_variables.scss" as *;
+@use "../../scss/_breakpoints.scss" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: $secondary-color;
+
+  .logo img {
+    width: 50px;
+    cursor: pointer;
+  }
+
+  &__wrap {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "left right";
+    }
+  }
+  &__nav {
+    display: flex;
+    padding-left: 15px;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0px;
+    }
+  }
+
+  li {
+    padding: 0 10px;
+    position: relative;
+
+    @include mobile {
+      padding: 5px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      transition: width 0.2s ease;
+      height: 2px;
+      background-color: $main-color;
+    }
+
+    &.active::after,
+    &:hover::after {
+      width: 80%;
+    }
+  }
+  .menu-icons {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-left: auto;
+    .amount {
+      position: absolute;
+      top: -2px;
+      right: 6px;
+      color: $secondary-color;
+      background-color: $red-color;
+      padding: 2px 7px;
+      border-radius: 50%;
+    }
+    @include mobile {
+      grid-area: right;
+     
+    }
+
+    img {
+      width: 25px;
+      margin: 0 15px;
+    }
+  }
+}
