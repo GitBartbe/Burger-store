@@ -68,6 +68,11 @@
     position: relative;
     align-items: center;
     margin-left: auto;
+
+    .shoping-bag {
+      cursor: pointer;
+    }
+
     .amount {
       position: absolute;
       top: -2px;

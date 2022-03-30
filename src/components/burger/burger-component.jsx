@@ -1,9 +1,16 @@
+import { useContext } from "react";
+import { ProductContext } from "../../contexts/products.context";
+
 import CustomButton from "../custom-button/custom-button";
 import "./burger-component.styles.scss";
 
+
+
 export default function BurgerComponent({ name, ingredients, price,imgUrl }) {
 
-  console.log(imgUrl)
+  const {products} = useContext(ProductContext);
+
+   
   
   return (
     <div className="burger-component" style={{ backgroundImage: `url(${ imgUrl})`, backgroundSize: 'auto' }} >

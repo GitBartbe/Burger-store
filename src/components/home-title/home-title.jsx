@@ -6,7 +6,7 @@ export default function HomeTitle() {
   return (
     <div className="home-title">
     <h1>The best burger in town</h1>
-    <CustomButton className={'gradient'} > Heck our menu </CustomButton>
+    <CustomButton className={'gradient'} > Check our menu </CustomButton>
     </div>
   );
 }

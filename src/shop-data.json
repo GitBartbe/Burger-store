@@ -1,0 +1,75 @@
+ [
+  {
+    "id": 1,
+    "imgUrl": "/assets/burger-1.png",
+    "name": "Basic Burger",
+    "ingredients": ["Latice", "Tomato", "House Sauce"],
+    "price": 5.0
+  },
+  {
+    "id": 2,
+    "imgUrl": "/assets/burger-2.png",
+    "name": "Double latice",
+    "ingredients": [
+      "applewood smoked bacon",
+      "cheddar",
+      "1000 island sauce ",
+      "lettuce ",
+      "tomato"
+    ],
+    "price": 8.20
+  },
+
+  {
+    "id": 3,
+    "imgUrl": "/assets/burger-3.png",
+    "name": "Manhatan  BURGER",
+    "ingredients": [
+      "portobello",
+      "grilled onions",
+      "swiss new york",
+      "lettuce",
+      "tomato"
+    ],
+    "price": 7.40
+  },
+  {
+    "id": 4,
+    "imgUrl": "/assets/burger-4.png",
+    "name": "Double latice",
+    "ingredients": [
+      "applewood smoked bacon ",
+      "cheddar ",
+      "1000 island sauce",
+      "lettuce",
+      "tomato"
+    ],
+    "price": 6.20
+  },
+  {
+    "id": 5,
+    "imgUrl": "/assets/burger-5.png",
+    "name": "Double latice",
+    "ingredients": [
+      "applewood smoked bacon ",
+      "cheddar ",
+      "1000 island sauce",
+      "lettuce",
+      "tomato"
+    ],
+    "price": 9.30
+  },
+  {
+    "id": 6,
+    "imgUrl": "/assets/burger-6.png",
+    "name": "Double latice",
+    "ingredients": [
+      "applewood smoked bacon ",
+      "cheddar ",
+      "1000 island sauce",
+      "lettuce",
+      "tomato"
+    ],
+    "price": 6.00
+  }
+]
