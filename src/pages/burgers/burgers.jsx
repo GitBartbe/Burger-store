@@ -1,14 +1,22 @@
+import { useContext } from "react";
+import { ProductContext } from "../../contexts/products.context";
+
 import BurgerComponent from "../../components/burger/burger-component";
 import "./burgers.styles.scss";
-import { burgerList } from "../../components/burger/bugrers";
+
+
 
 export default function Burgers() {
 
+  const {products} = useContext(ProductContext);
+  
   return (
     <div className="burger-container">
-      {burgerList.map(({name, ingredients, price,id,imgUrl}) => (
-        <BurgerComponent key={id} name={name} ingredients={ingredients} price={price} imgUrl={imgUrl} />
+      {products.map((product) => (
+        <BurgerComponent key={product.id} product={product} />
+        
       ))}
+      
     </div>
   );
 }
