@@ -5,6 +5,8 @@ import Home from './pages/home/home';
 import Burgers from './pages/burgers/burgers';
 import Drinks from './pages/drinks/drinks';
 import Salads from './pages/salads/salads';
+import Checkout from './pages/checkout/checkout';
+import SignIn from './pages/sign-in/sign-in';
 
 
 
@@ -17,6 +19,8 @@ function App() {
         <Route path="/burgers" element={<Burgers/>} />
         <Route path="/salads" element={<Salads/>} />
         <Route path="/drinks" element={<Drinks/>} />
+        <Route path='checkout' element={<Checkout/>}/>
+        <Route path='signIn' element={<SignIn/> } />
       </Routes>
     </div>
   );

@@ -68,10 +68,16 @@
     position: relative;
     align-items: center;
     margin-left: auto;
-
-    .shoping-bag {
+    
+    
+    .shoping-bag, .login-icon {
+      display: flex;
       cursor: pointer;
+      margin: 0 15px;
+      width: max-content;
     }
+
+
 
     .amount {
       position: absolute;
@@ -89,7 +95,7 @@
 
     img {
       width: 25px;
-      margin: 0 15px;
+      
     }
   }
 }
