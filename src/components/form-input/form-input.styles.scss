@@ -14,7 +14,7 @@ $main-color: black;
   .form-input {
     background: none;
     background-color: white;
-    color:grey;
+    color:$sub-color;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
@@ -48,7 +48,9 @@ $main-color: black;
     transition: 300ms ease all;
 
     &.shrink {
+      
       @include shrinkLabel();
     }
   }
 }
+
