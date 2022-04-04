@@ -6,7 +6,7 @@ import Burgers from './pages/burgers/burgers';
 import Drinks from './pages/drinks/drinks';
 import Salads from './pages/salads/salads';
 import Checkout from './pages/checkout/checkout';
-import SignIn from './pages/sign-in/sign-in';
+import Authentication from './pages/sign-in/authentication';
 
 
 
@@ -20,7 +20,7 @@ function App() {
         <Route path="/salads" element={<Salads/>} />
         <Route path="/drinks" element={<Drinks/>} />
         <Route path='checkout' element={<Checkout/>}/>
-        <Route path='signIn' element={<SignIn/> } />
+        <Route path='signIn' element={<Authentication/> } />
       </Routes>
     </div>
   );

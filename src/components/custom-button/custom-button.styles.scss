@@ -19,6 +19,12 @@
   color: $secondary-color;
 }
 
+.blue {
+  background-color: $blue-color;
+  padding: 3px 20px;
+  color: $secondary-color;
+}
+
 .custom-button:hover {
   opacity: 0.5;
 }
