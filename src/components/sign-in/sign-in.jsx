@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
-import { UserContext } from "../../contexts/user.context";
+
 import {
   signInWithGooglePopup,
   createUseDocumentFromAuth,
@@ -19,31 +19,27 @@ const defaulFormFields = {
 
 const SignIn = () => {
 
+  //------------------------------- Sign In with Google ---------------------------
   const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUseDocumentFromAuth(user);
+    const { user } = await signInWithGooglePopup(); 
+    goToHomePage();
   };
-
-
-
+//----------------------------------------------------------------------------------
   const [formFields, setFormFields] = useState(defaulFormFields);
-
-  const { setCurrentUser } = useContext(UserContext);
-
   const { email, password } = formFields;
 
-  
+// --------------------------- Navigate to Home Page --------------------------------
   const navigate = useNavigate();
 
   const goToHomePage = () => {
-    navigate('/');
-  }
-  //----------------- handle change ----------------------------
+    navigate("/");
+  };
+  //----------------- handle change -------------------------------------------------
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormFields({ ...formFields, [name]: value });
-    console.log(formFields);
+   
   };
 
   //---------------------------- handle submit -------------------
@@ -52,11 +48,11 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
-      const { user } = await SignInAuthUserWithEmailAndPassword(
+       await SignInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      setCurrentUser(user);
+      
       setFormFields(defaulFormFields);
       goToHomePage();
     } catch (error) {
@@ -65,7 +61,7 @@ const SignIn = () => {
       }
     }
   };
-
+//---------------------------------------------------------------------
   return (
     <div className="sign-in-container">
       <h2>Sign in with e-mail</h2>

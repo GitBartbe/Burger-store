@@ -11,10 +11,12 @@ import CartDropdown from "../crat-dropdown/cart-dropdown.component";
 import { CartContext } from "../../contexts/cart.context";
 import { UserContext } from "../../contexts/user.context";
 
+import { signOutUser } from "../../firebase/firebase";
+
 const Header = () => {
 
   const {currentUser} = useContext(UserContext)
-  console.log('User: ',currentUser);
+  
 
   const [isHidden, setIsHidden] = useState(true);
   const headerLinks = navLinks;
@@ -33,6 +35,7 @@ const Header = () => {
     setIsHidden(!isHidden);
   };
 
+ 
   const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
 
   const toggleIsCartOpen = () => {
@@ -56,6 +59,8 @@ const Header = () => {
           ))}
         </ul>
         <div className="menu-icons">
+          {currentUser ? (<span className="logout" onClick={signOutUser} >Log Out</span>): null }
+          
           <div className="login-icon" onClick={gotToLogIn} >
             <img src={userIcon} />
           </div>

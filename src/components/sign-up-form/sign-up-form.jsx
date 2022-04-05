@@ -36,7 +36,6 @@ const SignUpForm = () => {
         password
       );
       await createUseDocumentFromAuth(user, { displayName });
-      console.log("ok");
       setFormFields(defaultFormFields);
     } catch (error) {
       if (error.code === "auth/emaili-alredy-in-use") {
