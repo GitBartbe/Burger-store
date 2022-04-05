@@ -9,8 +9,13 @@ import shoppingBag from "../../assets/shopping-bag.svg";
 import CartDropdown from "../crat-dropdown/cart-dropdown.component";
 
 import { CartContext } from "../../contexts/cart.context";
+import { UserContext } from "../../contexts/user.context";
 
 const Header = () => {
+
+  const {currentUser} = useContext(UserContext)
+  console.log('User: ',currentUser);
+
   const [isHidden, setIsHidden] = useState(true);
   const headerLinks = navLinks;
   const { pathname } = useLocation();

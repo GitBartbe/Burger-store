@@ -6,7 +6,7 @@ import Burgers from './pages/burgers/burgers';
 import Drinks from './pages/drinks/drinks';
 import Salads from './pages/salads/salads';
 import Checkout from './pages/checkout/checkout';
-import Authentication from './pages/sign-in/authentication';
+import Authentication from './pages/authentication/authentication';
 
 
 
