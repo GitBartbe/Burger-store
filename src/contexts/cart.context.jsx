@@ -39,7 +39,33 @@ const clearCartItem = (cartItems, itemToClear) => {
 };
 
 
-//-------------------------------------------------------------------------------
+
+
+//------------------------------- Set local storage ------------------------------
+
+const setLocalStorage = (key, value) => {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  }
+  catch (error) {
+    console.log(error)
+  }
+}
+
+//---------------------  get LocalStorage ---------------------------------------
+
+
+const getLocalStorage = (key, initialValue) => {
+  try {
+    const value = window.localStorage.getItem(key);
+    return value ? JSON.parse(value) : initialValue;
+  } catch (error) {
+    return initialValue;
+  
+  }
+
+  }
+
 
 export const CartContext = createContext({
   isCartOpen: false,
@@ -53,9 +79,17 @@ export const CartContext = createContext({
 
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => getLocalStorage('cartItems', []));
   const [cartCount, setCartCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
+
+
+  // useEffect(() => {
+  //  window.onunload = () => {
+  //    localStorage.removeItem('cartItems')
+  //  }
+  // },[] )
+  
 
   useEffect(() => {
     const newCartCount = cartItems.reduce(
@@ -72,6 +106,22 @@ export const CartProvider = ({ children }) => {
     )
     setCartTotal(newCartTotal)
   },[cartItems]);
+
+  useEffect (() => {
+   
+    setLocalStorage('cartItems',cartItems);
+  }, [cartItems]);
+
+ useEffect(() => {
+   const items = JSON.parse(localStorage.getItem('cartItems'));
+   if (items) {
+     setCartItems(items);
+     console.log('Local items',cartItems)
+   }
+ },[]);
+
+
+//-------------------------------------------------------------------------------
 
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
