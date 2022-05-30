@@ -1,36 +1,44 @@
+@use '../../scss/_variables.scss' as *;
+@use '../../scss/_breakpoints.scss' as *;
+
 .checkout-container {
-    width: 55%;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 85px auto 0;
-  
-    .checkout-header {
-      width: 100%;
-      padding: 10px 0;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid darkgrey;
-  
-      .header-block {
-        text-transform: capitalize;
-        width: 23%;
-  
-        &:last-child {
-          width: 8%;
-        }
-      }
-    }
-  
-    .total {
-      margin-top: 30px;
-      margin-left: auto;
-      font-size: 36px;
-    }
-    .payment-container {
-      
-      margin-left: auto;
-      margin-top: 20px;
+  width: 55%;
+  min-height: 90vh;
+  padding: 60px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  margin: 85px auto 0;
+  font-family: 'Open Sans', sans-serif;
+  @include tablet {
+    width: 80%;
+    padding: 10px;
+  }
+  @include mobile {
+    width: 100%;
+  }
+
+  .total {
+    margin-top: 30px;
+    margin-left: auto;
+    font-size: 36px;
+    @include mobile {
+      font-size: 24px;
     }
   }
+  .payment-container {
+    margin-left: auto;
+    margin-top: 20px;
+  }
+
+  .test-warning {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: red;
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

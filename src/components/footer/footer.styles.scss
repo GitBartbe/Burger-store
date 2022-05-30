@@ -1,0 +1,45 @@
+@use '../../scss/_variables.scss' as *;
+@use '../../scss/_breakpoints.scss' as *;
+
+.footer-container {
+  width: 100%;
+  background-color: $black-color;
+  font-family: 'Open Sans', sans-serif;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .media {
+    display: flex;
+    justify-content: center;
+    color: $secondary-color;
+    text-align: center;
+    .logo {
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 0 0 15px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    color: $secondary-color;
+    text-align: center;
+  }
+}

@@ -116,7 +116,7 @@ export const CartProvider = ({ children }) => {
    const items = JSON.parse(localStorage.getItem('cartItems'));
    if (items) {
      setCartItems(items);
-     console.log('Local items',cartItems)
+     
    }
  },[]);
 

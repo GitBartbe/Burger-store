@@ -1,29 +1,44 @@
-@use "../../scss/_variables.scss" as *;
+@use '../../scss/_variables.scss' as *;
 
-.burger-container {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  justify-content: center;
+.category {
   margin-top: 85px;
-  padding-bottom: 20px;
-  width: 100%;
-  min-height: 100vh;
-  background-image:url("../../assets/burger-background.png") ;
+  background-image: url('../../assets/burger-background.png');
   background-size: cover;
   overflow: hidden;
+  h1 {
+    font-family: 'Dancing Script', cursive;
+  }
+  &__title {
+    display: flex;
+    padding-top: 40px;
+    width: 100%;
+    justify-content: center;
 
-}
+    h1 {
+      color: aliceblue;
+      font-size: 80px;
+    }
+  }
 
-@media (max-width: 1266px) {
   .burger-container {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    padding-bottom: 20px;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 1266px) {
+    .burger-container {
       grid-template-columns: 1fr;
       place-items: center;
-      
-  }}
-
+    }
+  }
 
   @media (max-width: 600px) {
     .burger-container {
-        padding: 15px;
-        
-    }}
+      padding: 15px;
+    }
+  }
+}

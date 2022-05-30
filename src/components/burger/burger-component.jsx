@@ -6,10 +6,8 @@ import "./burger-component.styles.scss";
 
 export default function BurgerComponent({ product }) {
   const { name, ingredients, imgUrl, price } = product;
-
   const { addItemToCart } = useContext(CartContext);
   const addProductToCart = () => addItemToCart(product);
-
 
 
   return (

@@ -1,15 +1,17 @@
 @mixin mobile {
-    @media only screen and (max-width: 600px) {
-        @content;
-         .hidden {
-        display: none;
-    }
-    }
-   
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin mobile-show {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media only screen and (max-width: 1024px) {
-        @content;
-    }
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
 }

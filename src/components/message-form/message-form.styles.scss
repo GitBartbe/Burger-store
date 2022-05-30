@@ -1,0 +1,16 @@
+.message-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  overflow: hidden;
+  .form-input {
+    height: 40px;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .message-button-container {
+    margin: 20px;
+  }
+}

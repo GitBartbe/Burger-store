@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import "./details.component.styles.scss";
 
-export default function DetailsComponent(props) {
-  console.log(props.bgImage);
+const DetailsComponent = (props) => {
   return (
     <div
       className="details-component"
-      style={{ backgroundImage: `url(${props.background})` }}
+      style={{
+        backgroundImage: `url(${props.background})`
+      }}
     >
-      <Link to={props.link}>{props.children}</Link>
+
+      <Link to={props.link}>{props.name}</Link>
     </div>
   );
-}
+};
+
+export default DetailsComponent;

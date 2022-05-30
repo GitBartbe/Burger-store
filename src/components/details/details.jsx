@@ -1,19 +1,16 @@
-import './details.styles.scss'
-import { Link } from 'react-router-dom'
-import DetailsComponent from './details.component'
-import background from '../../assets/about-photo.png'
+import "./details.styles.scss";
+import { Link } from "react-router-dom";
+import DetailsComponent from "./details.component";
+import detailsData from "./details-file";
 
-export default function Details() {
-
+const Details = () => {
   return (
-    <div className='details-container' >
-    <DetailsComponent background={background} link={'./aboutus'} > About us </DetailsComponent>
-        <div className="details-middle">
-        <Link to='./history'>History</Link>
-        </div>
-        <div className="details-right">
-        <Link to='./media'>Media</Link>
-        </div>
+    <div className="details-container">
+      {detailsData.map((item) => (
+        <DetailsComponent background={item.imgUrl} link={item.url} name={item.name} />
+      ))}
     </div>
-  )
-}
+  );
+};
+
+export default Details;

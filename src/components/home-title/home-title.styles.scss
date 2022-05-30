@@ -1,19 +1,28 @@
-@use "../../scss/_variables.scss" as *;
+@use '../../scss/_variables.scss' as *;
+@use '../../scss/_breakpoints.scss' as *;
 
 .home-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-image: url("../../assets/herro-bg.jpg");
+  background-image: url('../../assets/herro-bg.jpg');
   background-size: cover;
   height: 100vh;
   overflow: hidden;
 
-  h1 {
-    padding: 40px;
-    font-size: 3.5rem;
-    color: $secondary-color;
+  @include tablet {
+    background-position: 25% 75%;
   }
 
+  h1 {
+    padding: 220px 20px;
+    font-size: 120px;
+    font-family: 'Dancing Script', cursive;
+    color: $secondary-color;
+
+    @include mobile {
+      font-size: 60px;
+    }
+  }
 }

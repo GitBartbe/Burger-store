@@ -1,41 +1,59 @@
+@use '../../scss/_variables.scss' as *;
+@use '../../scss/_breakpoints.scss' as *;
+
 .checkout-item-container {
-    width: 100%;
-    display: flex;
-    min-height: 100px;
-    border-bottom: 1px solid darkgrey;
-    padding: 15px 0;
-    font-size: 20px;
-    align-items: center;
-  
-    .image-container {
-      width: 23%;
-      padding-right: 15px;
-  
-      img {
-        width: 100%;
-        height: 100%;
-      }
+  width: 100%;
+  display: flex;
+  min-height: 100px;
+  border-bottom: 1px solid darkgrey;
+  padding: 15px 0;
+  font-size: 20px;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+
+  .image-container {
+    width: 200px;
+    height: 140px;
+    margin-right: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+    @include mobile {
+      width: 120px;
+      height: 80px;
+      margin-right: 10px;
     }
-    .name,
-    .quantity,
-    .price {
-      width: 23%;
-    }
-  
-    .quantity {
-      display: flex;
-  
-      .arrow {
-        cursor: pointer;
-      }
-  
-      .value {
-        margin: 0 20px;
-      }
-    }
-  
-    .remove-button {
-      padding-left: 12px;
-      cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
+  .name,
+  .quantity,
+  .price {
+    width: 20%;
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .arrow {
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .value {
+      margin: 0 5px;
+      font-size: 16px;
+    }
+  }
+
+  .remove-button {
+    padding-left: 12px;
+    cursor: pointer;
+  }
+}

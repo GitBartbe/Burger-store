@@ -1,4 +1,3 @@
-import { calculateNewValue } from "@testing-library/user-event/dist/utils";
 import { initializeApp } from "firebase/app";
 
 import {
@@ -59,7 +58,7 @@ export const addCollectionAndDocuments = async (
     bach.set(docRef, object);
   });
   await bach.commit();
-  console.log("done");
+  console.log("Adding collection done");
 };
 
 //------------------------ get products from firebase ----------------------------------
